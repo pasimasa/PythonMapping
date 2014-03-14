@@ -17,10 +17,10 @@ arcpy.env.overwriteOutput = True
 
 for f in os.listdir(gpxFolder):
 	
-	print f
+	print f + " - convert to points in_mem"
 	arcpy.GPXtoFeatures_conversion(gpxFolder + "\\" + f, "in_memory\\track")
     
-	print "convert points to lines in memory"
+	print "convert in_memory points to lines"
 	arcpy.PointsToLine_management("in_memory\\track", "in_memory\\track_line")
     	
     print "add the new in_mem line to target"
