@@ -1,3 +1,10 @@
+///
+Script to import all GPX tracks from a folder into a line feature class
+in a file geodatabase.
+
+Paths hardcoded in script so needs changed first before running it
+///
+
 import sys, arcpy, os
 
 gpxFolder = r"c:\stuff\python\gpx"
