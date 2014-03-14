@@ -1,9 +1,9 @@
-///
+"""
 Script to import all GPX tracks from a folder into a line feature class
-in a file geodatabase.
+in a file geodatabase. New line feature for each GPX file.
 
 Paths hardcoded in script so needs changed first before running it
-///
+"""
 
 import sys, arcpy, os
 
