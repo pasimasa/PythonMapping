@@ -2,6 +2,8 @@
 Script to import all GPX tracks from a folder into a line feature class
 in a file geodatabase. New line feature for each GPX file.
 
+Generate linear density map of those lines to show where most tracks go.
+
 Paths hardcoded in script so needs changed first before running it.
 
 Could do with some error handling, create FGDB if it doesn't exist etc
@@ -25,3 +27,6 @@ for f in os.listdir(gpxFolder):
     	
     print "add the new in_mem line to target"
 	arcpy.Append_management("in_memory\\track_line", target, "NO_TEST")
+	
+	# Line density stuff todo - needs Spatial Analyst
+	# lineDensity = LineDensity(target, "", 10, 20)
