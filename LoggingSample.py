@@ -4,7 +4,8 @@ VERSION = "1.0"
 
 def SetupLogger():
     """
-    Create logger object for writing into log file
+    Create logger object for writing into log file. 
+    Creates new log for each day (good for scheduled tasks)
     """
     logger = logging.getLogger(VERSION)
     logger.setLevel(logging.DEBUG)
