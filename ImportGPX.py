@@ -11,9 +11,8 @@ Also doesn't carry any attributes through from GPX, date/time would be good
 """
 
 import sys, arcpy, os
-
+## TODO Jim - PARAM
 gpxFolder = r"c:\stuff\python\gpx"
-
 target = r"c:\stuff\python\GPS.gdb\Tracks_1"
 
 def main():
