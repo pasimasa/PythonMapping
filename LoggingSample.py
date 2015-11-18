@@ -1,8 +1,9 @@
-import logging, datetime
+import logging
+import datetime
 
 VERSION = "1.0"
 
-def SetupLogger():
+def setup_logger():
     """
     Create logger object for writing into log file and output to screen. 
     Creates new log for each day (good for scheduled tasks)
@@ -18,14 +19,14 @@ def SetupLogger():
     logger.addHandler(handler)
     
     # Output to screen
-    stdOutHandler = logging.StreamHandler()
-    stdOutHandler.setFormatter(formatter)
-    logger.addHandler(stdOutHandler)
+    stdout_handler = logging.StreamHandler()
+    stdout_handler.setFormatter(formatter)
+    logger.addHandler(stdout_handler)
 
     return logger
 
 # Create logger
-logger = SetupLogger()
+logger = setup_logger()
 
 def main():
 
