@@ -14,7 +14,8 @@ def setup_logger(folder_name):
     formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
     
     # Output to log file
-    handler = logging.FileHandler(os.path.join(folder_name, "ScriptLog_%s_%s_%s.log" % (now.day, now.month, now.year)), "a", encoding=None, delay="true")
+    log_file = os.path.join(folder_name, "ScriptLog_%s_%s_%s.log" % (now.day, now.month, now.year))
+    handler = logging.FileHandler(log_file, "a", encoding=None, delay="true")
     handler.setFormatter(formatter)
     logger.addHandler(handler)
     
