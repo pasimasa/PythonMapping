@@ -3,7 +3,7 @@ import datetime
 
 VERSION = "1.0"
 
-def setup_logger():
+def setup_logger(folder_name):
     """
     Create logger object for writing into log file and output to screen. 
     Creates new log for each day (good for scheduled tasks)
@@ -14,7 +14,7 @@ def setup_logger():
     formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
     
     # Output to log file
-    handler = logging.FileHandler("ScriptLog_%s_%s_%s.log" % (now.day, now.month, now.year), "a", encoding=None, delay="true")
+    handler = logging.FileHandler(os.path.join(folder_name, "ScriptLog_%s_%s_%s.log" % (now.day, now.month, now.year)), "a", encoding=None, delay="true")
     handler.setFormatter(formatter)
     logger.addHandler(handler)
     
@@ -25,8 +25,10 @@ def setup_logger():
 
     return logger
 
-# Create logger
-logger = setup_logger()
+# Create logger, put logfile in \logs subfolder
+script_dir = os.path.dirname(os.path.realpath(__file__)
+log_folder = os.path.join(script_dir, "logs")
+logger = setup_logger(log_folder)
 
 def main():
 
